@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GetName : MonoBehaviour
 {
-
+    private Encrypter encrypt;
     public TMP_InputField nameText;
     string prevName;
 
@@ -15,6 +15,7 @@ public class GetName : MonoBehaviour
     {
         nameText = nameText.GetComponent<TMP_InputField>();
         prevName = nameText.name;
+        encrypt = new Encrypter();
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class GetName : MonoBehaviour
             string name = nameText.text;
             if (name != prevName)
             {
+                name = encrypt.EncryptString(name, "qword321");
                 StaticVariables.setName(name);
             }
             else

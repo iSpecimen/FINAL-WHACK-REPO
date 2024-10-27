@@ -45,8 +45,8 @@ public class DetCrash : MonoBehaviour
         Debug.Log("There has been a deadly awful crash :(.");
         // Tells python server to run the crash has been detected script
         PythonCommunicator pyth=FindObjectOfType<PythonCommunicator>();
-        //placeholder data
-        string name = "Jenny Fierro";
+        Encrypter algo = new Encrypter();
+        string name = algo.DecryptString(StaticVariables.getName(), "qword321");
 
         if (pyth != null)
         {
