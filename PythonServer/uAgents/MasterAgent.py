@@ -28,16 +28,14 @@ masterAgent = Agent(
     endpoint=["http://localhost:8000/submit"],
 )
 
-
 @masterAgent.on_event("startup")
 async def GetWeather(ctx:Context):
-    await ctx.send(CarParkAgentAddress, Message(message=True))
+    await ctx.send(CarParkAgentAddress, CarParksMessage(message=True))
+
+def Startup():
+    if __name__ == "__main__":
+        masterAgent.run()
 
 
 
 
-
-
-
-if __name__ == "__main__":
-    masterAgent.run()
