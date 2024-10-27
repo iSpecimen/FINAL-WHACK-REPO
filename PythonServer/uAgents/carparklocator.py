@@ -67,7 +67,7 @@ class CParkCoords(Model):
     longitude: float
 
 @mater.on_message(model=CParkCords)
-async def what3words_message_handler(ctx: Context, sender: str, msg: CParkCoords):
+async def carParks_message_handler(ctx: Context, sender: str, msg: CParkCoords):
     ctx.logger.info(f"Received message from {sender}: {msg.latitude}, {msg.longitude}")
     latitude = msg.latitude
     longitude = msg.longitude
