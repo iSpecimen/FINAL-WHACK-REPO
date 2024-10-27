@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 
-public class ServerCommunication : MonoBehaviour
+public class PythonCommunicator : MonoBehaviour
 {
     private string serverUrl = "http://127.0.0.1:5000/data"; // Replace <your_server_ip> with the actual server IP
     private string messageRecieved;

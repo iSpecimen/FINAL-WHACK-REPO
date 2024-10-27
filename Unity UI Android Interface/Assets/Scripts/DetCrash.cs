@@ -44,6 +44,18 @@ public class DetCrash : MonoBehaviour
     {
         Debug.Log("There has been a deadly awful crash :(.");
         // Tells python server to run the crash has been detected script
+        PythonCommunicator pyth=FindObjectOfType<PythonCommunicator>();
+        //placeholder data
+        string name = "Jenny Fierro";
 
+        if (pyth != null)
+        {
+            string jsonData = "{\"Name\": \""+name+ "\"},{\"Acceleration\": \""+acc.ToString()+"\"} ";
+            StartCoroutine(pyth.SendData(jsonData));
+        }
+        else
+        {
+            //error
+        }
     }
 }
