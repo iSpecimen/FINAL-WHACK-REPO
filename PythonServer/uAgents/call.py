@@ -1,4 +1,3 @@
-import UnityEngine as ue
 from twilio.rest import Client
 import TextToSpeech as tts
 import SpeechToText as sst
