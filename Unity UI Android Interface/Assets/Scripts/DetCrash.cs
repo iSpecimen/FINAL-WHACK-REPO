@@ -50,7 +50,7 @@ public class DetCrash : MonoBehaviour
 
         if (pyth != null)
         {
-            string jsonData = "{\"Name\": \""+name+ "\"},{\"Acceleration\": \""+acc.ToString()+"\"} ";
+            string jsonData = "{\"Type\": \""+"Crash_Detected"+ "\"},{\"Name\": \"" + name+ "\"},{\"Acceleration\": \""+acc.ToString()+"\"} ";
             StartCoroutine(pyth.SendData(jsonData));
         }
         else
