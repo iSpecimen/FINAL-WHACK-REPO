@@ -15,16 +15,13 @@ timingAgent = Agent(
 fund_agent_if_low(timingAgent.wallet.address())
 
 
-PARKING = "agent1qtl9q7vr2xp5euvz35wy6thq98c5qlhuaj36c90lpzg4d65srlg7quvwhpl"
+PARKING = "agent1q2a45mxzld7ffe484ejup3g4mqk83x4hf8qhhl7ratzyh5x3s0kuk6vwqrn"
 
 
 @timingAgent.on_interval(period=10.0)
 async def send_message(ctx: Context):
     await ctx.send(PARKING, Message(timing = True))
 
-
-if __name__ == "__main__":
-    timingAgent.run()
 
 if __name__ == "__main__":
     timingAgent.run()
