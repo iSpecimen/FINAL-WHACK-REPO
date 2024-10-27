@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from call import CallForHelp #uses the CallForHelp function in call.py
+from MasterAgent import Startup #so i can call the startup in masteragent when i recieve the 
 import json
 
 app = Flask(__name__)
@@ -10,11 +11,11 @@ def receive_Data():
     print(f"Received data: {data}")
 
     if data['type'] == 'Journey_Started':
-        # Start whatever needs to run whilst the car is just moving in general 
+        MasterAgent.Startup()
+        # Start MasterAgent when journey starts
     elif data['type'] == 'Crash_Detected':
         call.CallForHelp() #Run Call.py's CallForHelp Method 
     
-
     #Need to Convert the data to a string to write to a txt file here, the CrashData will only have name and acceleration.
     json_data_string = json.dumps(data, indent=4)
     with open('received_data.txt', 'w') as file:
