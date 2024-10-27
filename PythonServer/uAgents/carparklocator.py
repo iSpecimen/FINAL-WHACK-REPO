@@ -60,6 +60,18 @@ async def send_message(ctx: Context, sender: bool, msg: Message):
         ),
     )
 
+"""
+add to master:
+class CParkCoords(Model):
+    latitude: float
+    longitude: float
+
+@mater.on_message(model=CParkCords)
+async def what3words_message_handler(ctx: Context, sender: str, msg: CParkCoords):
+    ctx.logger.info(f"Received message from {sender}: {msg.latitude}, {msg.longitude}")
+    latitude = msg.latitude
+    longitude = msg.longitude
+"""
 
 @carpark.on_message(GeoParkingResponse)
 async def handle_response(ctx: Context, sender: str, msg: GeoParkingResponse):
