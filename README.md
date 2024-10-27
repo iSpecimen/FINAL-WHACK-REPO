@@ -21,8 +21,8 @@ Our project placed a great deal of importance on security, and as such, the user
 
 This product is intended for a driver of a car to use to monitor and provide suggestions to improve their safety on the road by having it as an app on their phone.
 
-## Special Considerations
+## Final project summary
 
-This project is currently incapable of running as a whole. This is because of some extensive set-up issues we have had regarding the difficulty of using python (the language of fetch.ai's libraries) to interface in any way with a mobile application (required for the use case and for acccess to needed data such as from the gyroscope sensor and the geolocation data). C# and Unity do not naturally interface with Python.
+Unfortunately, this project is currently incapable of running as a whole. This is because of some extensive set-up issues we have had regarding the difficulty of using python (the language of fetch.ai's libraries) to interface in any way with a mobile application; C# and Unity do not naturally interface with Python. Although most of the back end has been created successfully using Fetch AI's agents, for the complete project we required phone gyroscope, accelerometer and geolocation data, which could not be obtained until the front end technology was set up.
 
 We hope that you wiil still be able to appreciate and understand the ideas and potential implementation portrayed by this project.
