@@ -27,47 +27,4 @@ public class RunsPythonCaller : MonoBehaviour
         ExecutePythonScript();
     }
 
-    private void ExecutePythonScript()
-    {
-        // Path to the Python interpreter (modify if necessary)
-        string pythonPath = "python"; // or specify full path, e.g., "C:/Python39/python.exe"
-        // Path to the Python script
-        string scriptPath = Application.dataPath + "/Scripts/test1.py";
-
-        // Set up the process start information
-        ProcessStartInfo startInfo = new ProcessStartInfo
-        {
-            FileName = pythonPath,
-            Arguments = $"\"{scriptPath}\"", // Quotes around path in case it has spaces
-            UseShellExecute = false,
-            RedirectStandardOutput = true,
-            RedirectStandardError = true,
-            CreateNoWindow = true
-        };
-
-        try
-        {
-            // Start the process
-            using (Process process = Process.Start(startInfo))
-            {
-                // Capture output for debugging
-                string output = process.StandardOutput.ReadToEnd();
-                string error = process.StandardError.ReadToEnd();
-
-                process.WaitForExit();
-
-                // Log the output and errors
-                UnityEngine.Debug.Log("Python output: " + output);
-                if (!string.IsNullOrEmpty(error))
-                {
-                    UnityEngine.Debug.LogError("Python error: " + error);
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            UnityEngine.Debug.LogError("Failed to execute Python script: " + e.Message);
-        }
-    }
-
 }

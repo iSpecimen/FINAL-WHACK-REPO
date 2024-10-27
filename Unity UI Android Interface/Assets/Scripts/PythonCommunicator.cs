@@ -4,14 +4,19 @@ using System.Collections;
 
 public class ServerCommunication : MonoBehaviour
 {
-    private string serverUrl = "http://<your_server_ip>:5000/data"; // Replace <your_server_ip> with the actual server IP
+    private string serverUrl = "http://127.0.0.1:5000/data"; // Replace <your_server_ip> with the actual server IP
+    private string messageRecieved;
+    public string getMessage()
+    {
+        return messageRecieved;
+    }
 
     void Start()
     {
         StartCoroutine(GetData());
     }
 
-    IEnumerator SendData(string jsonData)
+    public IEnumerator SendData(string jsonData)
     {
         UnityWebRequest request = new UnityWebRequest(serverUrl, "POST");
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
@@ -44,7 +49,9 @@ public class ServerCommunication : MonoBehaviour
         else
         {
             Debug.Log("Data received successfully");
-            Debug.Log(request.downloadHandler.text);
+
+            //output
+            messageRecieved = request.downloadHandler.text;
         }
     }
 }
